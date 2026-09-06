@@ -1,0 +1,191 @@
+<!-- Kommentar -->
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charSet="UTF-8"/>
+		<meta name='apple-mobile-web-app-capable' content='yes' />
+		<meta name='apple-mobile-web-app-status-bar-style' content='black-translucent' />
+		<link  rel='shortcut icon' type='image/png' href="  data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADPklEQVR4AU3B/0/UdRwH8Ofz8/58PnfH3akg5fFFPDpdQ11RltoSPSMkv9C0RT+0wZZiU1yyxlpbG39BbTXYnTJP7IfG1ohfoiiXX0ZublSbWa6fZGDoiEDQDg7u7vN5v7oPbK3Hg/CcSxk43abhSV7YBRjvgHo/hFGskAmA1wH0ob3tJ3iSF4n2E0IkUwba2zQSl0zQ7YZSp+HzAbkc4LpYoRRg28ByFtC6B+ZcB979QJBMkfD09Jo0zWEjHG7gwoLWEFcLFEQIDykG6RqAKaEQdTo9LPNWEz5q1QYKlGV1S1GwwZ2ZzTmZDHUubwFgAUiigDqXs5xMBu7MbE6KgofMEudTFKhA7+e7cq7TGyZ1y9an1eFYNWkquTf/iAAIEcJ1Ga/aKC1ba7hlfYlxd/YhlrPZ3UXH3hxSzquNXbVPRV+4dfSwc2BjhaoKh6Tzme2MV1ZgYPweLKVwuekgunY8x2KfT5pj1Xz/2W3O5fnHanL6b5jwWa8Mxvfg5tS0ahr6XpDLsuyJUoy+8Tp+ONIIz6ZwCFVffImpTIbiujJ0pFENxvcgNnk/btRFIpvK/T60XPuRL5ZH8OHLuxE0TWzpH0BN8TpsLynG5v6vsMa2cLv5KPZWluPtKyOsCPhRV7YhauB/DBKKBkhCsEoAaBEYJBQJg8R/BFB/xutbjm+rWV8XeVI+/uUWb4xP0Pb78ftbxzD2TxozS1l07ahFz50/8MntOxh/9BiDr9WL37bZeXN0jPgsea52c+zU1fp9eRLWg8WM1Kxby5Gpv9D03RV4vjnYgLqyDfjt4ZxE14QJQb7+6oj1692x8wz0Xtq55DijYZ9PmmPVKC8K8MbUtIxM3icMAyu0xr6qStkbifBBZlEGxiaQXs4yYFk7iQJ1vq/bDQTew9x8DqItmCZhWUKsEhTk84TjCGjkUVJsq6WlHvfU8bMmCtyldAdFYkZp6SEuLoiG5LVAiQjhIcWwLcewbVOCIVsvpIfdfLADBQqJFHG2XfDt1/3S0LhWAy9JIKAgQogQJKEUxedX2nEo2eVupNmKzlZBMkXCk7hInDkh8CQuPA/yJID9AKJYNQHgOiB9aD/5MzyJFHGmTf4Fd6FRFlDQVawAAAAASUVORK5CYII=">
+		<script>
+			var windowWidth = window.innerWidth;
+			var windowHeight = window.innerHeight;
+			function Width(){
+				document.write(windowWidth);}
+			function Height(){
+				document.write(windowHeight);}
+		</script>
+		<style> 
+			body {background-color: #D8D8D8;}
+			h2 {background-color:#008184; color:#FFFFFF; text-align:center; font-size:40px;}
+			/* ------------------------------------------ */
+			.gauge {
+				position: relative;
+				border-radius: 50%/100% 100% 0 0;
+				background-color: var(--color, #a22);
+				overflow: hidden;
+				margin: 10px 10px 10px 10px;
+				width: 350px;
+				hight: auto;
+			}
+			.gauge:before{
+				content: "";
+				display: block;
+				padding-top: 50%;   /* ratio of 2:1*/
+			}
+			.gauge .chart {
+				overflow: hidden;
+			}
+			.gauge .mask {
+				position: absolute;
+				left: 20%;
+				right: 20%;
+				bottom: 0%;
+				top: 40%;
+				background-color: #D8D8D8;
+				border-radius: 50%/100% 100% 0 0;
+			}
+			.gauge .percentage {
+				position:  absolute;
+				top: -1px;
+				left: -1px;
+				bottom: 0;
+				right: -1px;
+				background-color: var(--background, #aaa);
+				transform:rotate(var(--rotation)); 
+				transform-origin: bottom center; 
+				transition-duration: 600;
+			}
+			.gauge:hover {
+				--rotation: 100deg;
+			}
+			.gauge .value {
+				position:absolute; bottom:0%; left:0;   
+				width:100%; 
+				text-align: center;
+			}
+			.gauge .min {
+				position:absolute; 
+				bottom:0; left:5%;   
+			}
+			.gauge .max {
+				position:absolute; 
+				bottom:0; right:5%;   
+			}
+			/* ------------------------------------------ */
+			.chart {
+				background: white;
+				width: 100%;
+				hight: auto;
+				max-height: 500px;
+				min-width: 350px;
+				max-width: 3000px;
+				border-left: 2px dotted #555;
+				border-right: 2px dotted #555;
+				border-top: 2px dotted #555;
+				border-bottom: 2px dotted #555;
+				padding: 10px 10px 10px 10px;
+				margin: 10px 10px 10px 10px;
+			}
+			/* ------------------------------------------ */
+			.labels {
+				font-size: 13px;
+			}
+			.label-title {
+				font-weight: bold;
+				text-transform: uppercase;
+				font-size: 12px;
+				fill: black;
+			}
+			/* ------------------------------------------ */
+		</style>
+		
+		<title>Arduino WIFI-Hotspot</title>
+	</head>
+	
+	<body>
+		<h2>Arduino WIFI-Hotspot<br>
+			SSID: "ssid"<br>
+			Width: <script>Width(windowWidth)</script><br>
+			Hight: <script>Height(windowHeight)</script></h2>
+		<!-- ------------------------------------------ -->
+		<div class="flex-container" style="display:inline-flex; flex-direction:row; flex-wrap:wrap; justify-content:space-around; min-width: 100%;">
+			<div class="gauge" style="width: 400px; --rotation: 120deg; --color: #5cb85c; --background: #FFFFFF;">
+				<div class="percentage"></div>
+				<div class="mask"></div>
+				<span class="value" style="font-size:30px;">Temperatur:<br>"Temp"°C</span>
+			</div>
+			<div class="gauge" style="width: 400px; --rotation: 40deg; --color: #5cb85c; --background: #FFFFFF;">
+				<div class="percentage"></div>
+				<div class="mask"></div>
+				<span class="value" style="font-size:30px;">Luftfeuchtigkeit:<br>"Hum"%</span>
+			</div>
+			<div class="gauge" style="width: 400px; --rotation: 40deg; --color: #5cb85c; --background: #FFFFFF;">
+				<div class="percentage"></div>
+				<div class="mask"></div>
+				<span class="value" style="font-size: 30px;">Bodenfeuchte:<br>"Moist"%</span>
+			</div>
+		</div>
+		<!-- ------------------------------------------ -->
+		<div class="flex-container" style="display:inline-flex; flex-direction:row; flex-wrap:wrap; justify-content:space-around; min-width:100%;">
+			<svg viewBox="-20 -10 3030 275" class="chart">
+				<g class="labels x-labels">
+					<text x= "0" y="260"> 0</text>
+					<text x="20" y="260">20</text>
+					<text x="40" y="260">40</text>
+					<text x="60" y="260">60</text>
+					<text x="80" y="260">80</text>
+					<!-- <text x="400" y="440" class="label-title">Year</text> -->
+				</g>
+				<g class="labels y-labels">
+					<text x="-20" y=  "5">120</text>
+					<text x="-20" y= "45">100</text>
+					<text x="-15" y= "85"> 80</text>
+					<text x="-15" y="125"> 60</text>
+					<text x="-15" y="165"> 40</text>
+					<text x="-15" y="205"> 20</text>
+					<text x="-10" y="245">  0</text>
+					<!-- <text x="50" y="200" class="label-title">Price</text> -->
+				</g>
+				<polyline fill="none" stroke="#0074d9" stroke-width="2" points="
+						  0, 240
+						 20, 240
+						 40, 100
+						 60,  20
+						 80,  80
+						100,  80
+						120,  60
+						140, 100
+						160,  90
+						180,  80
+						200, 110
+						220,  10
+						240,  70
+						260, 100
+						280, 100
+						300,  40
+						320,   0
+						340, 100
+						360, 100
+						380, 120
+						400,  60
+						420,   0
+					   2990,  20
+					   3000,   0
+					"
+				/>
+			</svg>
+		</div>
+		<!-- ------------------------------------------ -->
+		<form action="/">
+			<label for="Min_Moist_percent">Mindestbodenfeuchtigkeit:</label>
+			<input type="number" id="Min_Moist_percent" name="iMin_Moist_percent" value="iMin_Moist_percent"><br><br>
+			<input type="submit" value="Ändern">
+		</form>
+		<form action="/">
+			<label for="Stop_Moist_percent">Höchstbodenfeuchtigkeit:</label>
+			<input type="number" id="Stop_Moist_percent" name="iStop_Moist_percent" value="iStop_Moist_percent"><br><br>
+			<input type="submit" value="Ändern">
+		</form>
+		<!-- ------------------------------------------ -->
+	</body>
+</html>
