@@ -14,7 +14,9 @@ Dieses Repository dient primär als persönliche Code-Sammlung und Dokumentation
 * **Smart Home Basis:** HomeAssistant mit einem entsprechenden Matter-Controller (z. B. Home Assistant Green, SkyConnect oder ein fähiger Border Router)
 
 ## ⚖️ Haftungsausschluss (Disclaimer)
-Die Nutzung der hier bereitgestellten Inhalte, Quellcodes und Anleitungen erfolgt **vollständig auf eigene Gefahr**. 
+Die Nutzung der hier bereitgestellten Inhalte, Quellcodes und Anleitungen erfolgt **vollständig auf eigene Gefahr**.
+Dieses Projekt ist ein "Public Domain"-Äquivalent und unter der Unlicense lizenziert. Du kannst mit meinem Code machen, was du möchtest (siehe LICENSE-Datei).
+Ausnahme: Einige der enthaltenen Beispiele und eingebundenen Bibliotheken basieren auf Code-Vorlagen von Drittanbietern, die unter der MIT-Lizenz stehen. Die jeweiligen Copyright-Hinweise verbleiben in den Kopfzeilen der betroffenen Code-Dateien und müssen dort beibehalten werden.
 
 * **Keine Haftung:** Der Autor übernimmt keinerlei Haftung für Schäden an Hardware, Software oder für Datenverluste, die durch die Nutzung dieses Repositories entstehen.
 * **Keine Garantie:** Der Code wird "wie besehen" (as-is) bereitgestellt, ohne ausdrückliche oder implizite Garantie auf Funktion, Richtigkeit oder Sicherheit.
